@@ -1,5 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import './Header.css'
+import PropTypes from 'prop-types'
 const Bottle = ({bottle, handleAddToCart}) => {
 const {name, img, price} = bottle
 
@@ -14,5 +15,10 @@ const {name, img, price} = bottle
         </div>
     );
 };
+
+Bottle.PropTypes= {
+    bottle: PropTypes.object.isRequired,
+    handleAddToCart: PropTypes.func.isRequired
+}
 
 export default Bottle;

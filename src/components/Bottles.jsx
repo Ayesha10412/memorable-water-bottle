@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Bottle from "./Bottle";
 import './Header.css'
 import { addToLS,getStoredCart } from "../Utilities/localstorage";
+import Cart from "../Cart/Cart";
 const Bottles = () => {
 
 const [bottles, setBottles] = useState([])
@@ -13,7 +14,7 @@ useEffect( () =>{
 },[])
 // load cart from local storage
 useEffect(()=>{
-    if(bottles.length){
+    if(bottles.length){ 
         const storedCart = getStoredCart() ;
         const savedCart =[];
         for (const id of storedCart){
@@ -40,6 +41,7 @@ addToLS(bottle.id)
         <div>
             <h2> Bottles Available : {bottles.length}</h2>
             <h4>Cart: {cart.length}</h4>
+            <Cart cart={cart}></Cart>
           <div className="bottle-container">
           {
                 bottles.map(bottle=> <Bottle  

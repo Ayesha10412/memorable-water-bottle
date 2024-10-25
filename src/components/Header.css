@@ -15,3 +15,10 @@ border-radius: 5px;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
 }
+.cart-container img{
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px; */
+    width:100px;
+    margin-right: 10px;
+}
